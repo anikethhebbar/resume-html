@@ -34,7 +34,7 @@ export async function generateHtmlWithLLM(text, llm, apiKey) {
       case 'anthropic':
         const anthropic = new Anthropic({ apiKey });
         const anthropicResponse = await anthropic.completions.create({
-          model: "claude-3.5-sonnet",
+          model: "claude-3-sonnet-20240229",
           prompt: prompt,
           max_tokens_to_sample: 2000,
         });
