@@ -19,7 +19,7 @@ export async function generateHtmlWithLLM(text, llm, apiKey) {
   ${text}
   \`\`\`
   Exit saying its not resume if unwanted PDF text found.
-  Desired Output: A complete HTML document with consistent styling, responsive to various screen sizes, including <html>, <head>, and <body> tags. Omit irrelevant information and prioritize a visually appealing, standardized layout adhering to the specified style guide.`;
+  Desired Output: A complete HTML document with consistent styling, responsive to various screen sizes, including <html>, <head>, and <body> tags. Omit irrelevant information and prioritize a visually appealing, standardized layout adhering to the specified style guide. Ensure that the output is strictly the HTML content without any conversational or explanatory text.`;
 
   try {
     switch (llm) {
