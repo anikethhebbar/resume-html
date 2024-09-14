@@ -25,11 +25,19 @@ export async function generateHtmlWithLLM(text, llm, apiKey) {
     switch (llm) {
       case 'openai':
         const openai = new OpenAI({ apiKey });
-        const openaiCompletion = await openai.chat.completions.create({
-          model: "gpt-3.5-turbo",
+        const response = await openai.chat.completions.create({
+          model: "gpt-4o-mini-2024-07-18",
           messages: [{ role: "user", content: prompt }],
+          temperature: 1,
+          max_tokens: 2048,
+          top_p: 1,
+          frequency_penalty: 0,
+          presence_penalty: 0,
+          response_format: {
+        type: "text"
+          }
         });
-        return openaiCompletion.choices[0].message.content;
+        return response.choices[0].message.content;
 
       case 'anthropic':
         const anthropic = new Anthropic({ apiKey });
