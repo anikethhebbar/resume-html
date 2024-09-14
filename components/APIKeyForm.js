@@ -3,7 +3,7 @@ import { Button, Input, FormControl, FormLabel, Select, Box } from '@chakra-ui/r
 
 const APIKeyForm = ({ onSubmit }) => {
   const [apiKey, setApiKey] = useState('');
-  const [llm, setLLM] = useState('');
+  const [llm, setLLM] = useState('gemini'); // Default to Google Gemini
 
   const handleSubmit = () => {
     if (apiKey && llm) {
@@ -31,8 +31,8 @@ const APIKeyForm = ({ onSubmit }) => {
           value={llm}
           onChange={(e) => setLLM(e.target.value)}
         >
-          <option value="openai">OpenAI GPT-3.5</option>
-          <option value="anthropic">Anthropic Claude</option>
+          <option value="openai">OpenAI GPT-3.5 (not tested)</option>
+          <option value="anthropic">Anthropic Claude (not tested)</option>
           <option value="gemini">Google Gemini</option>
         </Select>
       </FormControl>
